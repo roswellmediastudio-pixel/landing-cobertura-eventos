@@ -1,0 +1,936 @@
+/* =========================================================================
+   EDITORIAL CÁLIDO — híbrido: estructura minimalista (Apple) + identidad
+   cálida (crema + terracota + Playfair). Un solo accent, cero azules.
+   ========================================================================= */
+
+:root {
+  --ew-canvas: #fcf6f2;
+  --ew-parchment: #f5ece4;
+  --ew-white: #ffffff;
+  --ew-ink: #2d2a28;
+  --ew-body: #5a4a42;
+  --ew-secondary: #6f6157;
+  --ew-muted: #8c7a70;
+  --ew-accent: #e07a5f;
+  --ew-accent-hover: #c96a4f;
+  --ew-accent-soft: rgba(224,122,95,.1);
+  --ew-dark: #2c2825;
+  --ew-dark-2: #332e29;
+  --ew-dark-3: #252220;
+  --ew-on-dark-muted: #cfc4bc;
+  --ew-border: #eadfd5;
+  --ew-hairline: #e0d5ca;
+  --ew-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --ew-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ew-shadow: rgba(44,42,40,.28) 3px 5px 30px 0;
+}
+
+/* =========================================================================
+   BASE — lienzo crema, tinta cálida, serif en titulares, terracota único
+   ========================================================================= */
+
+.landing-page,
+.landing-page .page {
+  background: var(--ew-canvas) !important;
+  letter-spacing: normal;
+}
+
+.landing-page {
+  font-family: var(--ew-font) !important;
+  color: var(--ew-ink) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.landing-page p,
+.landing-page li {
+  color: var(--ew-body) !important;
+}
+
+.landing-page strong {
+  color: var(--ew-ink) !important;
+}
+
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4,
+.landing-page h5,
+.landing-page h6 {
+  font-family: var(--ew-display) !important;
+  font-weight: 600;
+  color: var(--ew-ink) !important;
+  letter-spacing: 0;
+}
+
+.landing-page ::selection {
+  background: rgba(224,122,95,.24);
+}
+
+.landing-page :focus-visible {
+  outline: 2px solid var(--ew-accent-hover);
+  outline-offset: 2px;
+}
+
+.landing-page a:not(.button):not(.wa-float):not(.landing-gallery-link) {
+  color: var(--ew-accent) !important;
+}
+
+.landing-page a:not(.button):not(.wa-float):not(.landing-gallery-link):hover {
+  color: var(--ew-accent-hover) !important;
+}
+
+.landing-page .skip-link {
+  background: var(--ew-accent);
+  color: #fff;
+}
+
+/* =========================================================================
+   BOTONES — píldoras terracota (gramática pill del rediseño anterior)
+   ========================================================================= */
+
+.landing-page .button {
+  font-family: var(--ew-font) !important;
+  font-weight: 600;
+  border-radius: 999px !important;
+  padding: 11px 22px;
+  font-size: 15px;
+  letter-spacing: .01em;
+  transition: background .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+.landing-page .button:active {
+  transform: scale(.95);
+}
+
+.landing-page .button-lg {
+  padding: 14px 28px;
+  font-size: 17px;
+}
+
+.landing-page .button-primary {
+  background: var(--ew-accent) !important;
+  border-color: var(--ew-accent) !important;
+  color: #fff !important;
+}
+
+.landing-page .button-primary:hover {
+  background: var(--ew-accent-hover) !important;
+  border-color: var(--ew-accent-hover) !important;
+  color: #fff !important;
+}
+
+.landing-page .button-primary-outline {
+  background: transparent !important;
+  border: 1px solid var(--ew-accent) !important;
+  color: var(--ew-accent) !important;
+}
+
+.landing-page .button-primary-outline:hover {
+  background: var(--ew-accent-soft) !important;
+  border-color: var(--ew-accent-hover) !important;
+  color: var(--ew-accent-hover) !important;
+}
+
+/* =========================================================================
+   BARRA SUPERIOR — frosted crema, brand en serif
+   ========================================================================= */
+
+.landing-page .landing-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(252,246,242,.82);
+  -webkit-backdrop-filter: saturate(160%) blur(20px);
+  backdrop-filter: saturate(160%) blur(20px);
+  border-bottom: 1px solid var(--ew-border);
+}
+
+.landing-page .landing-top-inner {
+  padding: 12px 0;
+}
+
+.landing-page .landing-brand .brand-name {
+  font-family: var(--ew-display) !important;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ew-ink) !important;
+  letter-spacing: 0;
+}
+
+.landing-page .landing-brand img {
+  border-radius: 50%;
+}
+
+.landing-page .landing-top .button {
+  background: var(--ew-accent) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.landing-page .landing-top .button:hover {
+  background: var(--ew-accent-hover) !important;
+  color: #fff !important;
+}
+
+/* =========================================================================
+   HERO — tile crema, titular serif grande, foto con sombra cálida
+   ========================================================================= */
+
+.landing-page .hero-full {
+  background: var(--ew-canvas);
+  padding: 88px 24px 96px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .landing-page .hero-full { padding: 116px 24px 112px; }
+}
+
+.landing-page .hero-full .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-page .hero-full .hero-eyebrow {
+  display: none;
+}
+
+.landing-page .hero-full h1 {
+  font-size: clamp(38px, 6.5vw, 58px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: 0;
+  color: var(--ew-ink) !important;
+}
+
+.landing-page .hero-full h4 {
+  font-family: var(--ew-font) !important;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--ew-secondary) !important;
+  margin-top: 14px;
+}
+
+.landing-page .hero-full .group-sm {
+  margin-top: 30px;
+  gap: 14px;
+}
+
+.landing-page .hero-full .hero-photo {
+  width: min(620px, 88vw);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: var(--ew-shadow);
+  margin: 48px auto 0;
+}
+
+/* =========================================================================
+   SECCIONES — alternancia cálida (el cambio de tono es el divisor)
+   ========================================================================= */
+
+.landing-page .bg-default { background: var(--ew-canvas) !important; }
+.landing-page .bg-gray-100 { background: var(--ew-parchment) !important; }
+.landing-page .bg-gray-700 { background: var(--ew-parchment) !important; }
+
+.landing-page #planes { background: var(--ew-canvas) !important; }
+.landing-page .how-works-section { background: var(--ew-white) !important; }
+
+.landing-page .landing-testimonials,
+.landing-page section.landing-testimonials { background: var(--ew-dark) !important; }
+.landing-page .landing-cta { background: var(--ew-dark-2) !important; }
+
+/* Franja de confianza — delgada, texto secundario */
+.landing-page .trust-strip {
+  background: var(--ew-white) !important;
+  padding: 20px 0;
+}
+
+.landing-page .landing-trust span {
+  font-family: var(--ew-font) !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ew-secondary) !important;
+}
+
+.landing-page .landing-trust span i {
+  color: var(--ew-accent) !important;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* =========================================================================
+   CABECERAS DE SECCIÓN — kicker terracota + título serif + barrita
+   ========================================================================= */
+
+.landing-page .section-kicker {
+  font-family: var(--ew-font) !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ew-accent) !important;
+  margin-bottom: 12px;
+}
+
+.landing-page .text-center > h3 {
+  font-family: var(--ew-display) !important;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--ew-ink) !important;
+}
+
+.landing-page .text-center > h3::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 2px;
+  background: var(--ew-accent);
+}
+
+/* =========================================================================
+   GALERÍA — fotos planas redondeadas, hover de zoom sutil
+   ========================================================================= */
+
+.landing-page .landing-gallery-link {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.landing-page .landing-gallery-img {
+  border: 0;
+  border-radius: 18px;
+  height: 240px;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: transform .5s cubic-bezier(.3,.6,.3,1);
+}
+
+.landing-page .landing-gallery-link:hover .landing-gallery-img {
+  transform: scale(1.04) !important;
+  box-shadow: none !important;
+}
+
+.landing-page .yt-embed {
+  border-radius: 18px;
+  box-shadow: none !important;
+  background-color: var(--ew-dark-3);
+}
+
+.landing-page .yt-embed .yt-play {
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* =========================================================================
+   TESTIMONIOS — banda café cálido, capturas con caption claro
+   ========================================================================= */
+
+.landing-page .landing-testimonials .section-kicker {
+  color: #e0a18d !important;
+}
+
+.landing-page .landing-testimonials .text-center > h3 {
+  color: #fff !important;
+}
+
+.landing-page .landing-testimonials .text-center > h3::after {
+  background: var(--ew-accent);
+}
+
+.landing-page .landing-testimonials .testimonial-card {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none !important;
+  transform: none !important;
+  gap: 14px;
+}
+
+.landing-page .landing-testimonials .testimonial-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.landing-page .landing-testimonials .testimonial-shot {
+  border-radius: 18px;
+}
+
+.landing-page .landing-testimonials .testimonial-caption {
+  margin-top: 4px;
+  font-family: var(--ew-font) !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--ew-on-dark-muted) !important;
+}
+
+/* Testimonios grid centrado (para 2 cards) */
+.landing-page .testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.landing-page .testimonial-cell {
+  flex: 1 1 300px;
+  max-width: 380px;
+}
+
+/* =========================================================================
+   PLANES — cards blancas hairline sobre crema, precio en terracota
+   ========================================================================= */
+
+.landing-page .sub-tab {
+  background: var(--ew-white);
+  border: 2px solid transparent;
+  border-radius: 999px !important;
+  color: var(--ew-ink) !important;
+  font-family: var(--ew-font) !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 22px;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.landing-page .sub-tab:hover {
+  border-color: var(--ew-accent);
+  color: var(--ew-ink) !important;
+  transform: none !important;
+}
+
+.landing-page .sub-tab.active {
+  border: 2px solid var(--ew-accent);
+  background: var(--ew-white);
+  color: var(--ew-accent) !important;
+}
+
+/* Pestañas simétricas: mismo ancho y texto centrado */
+.landing-page .sub-tabs {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.landing-page .sub-tab {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.plans-disclaimer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ew-muted);
+  margin-top: 12px;
+}
+
+.landing-page .landing-plans .service-card {
+  background: var(--ew-white) !important;
+  border: 1px solid var(--ew-hairline) !important;
+  border-radius: 18px !important;
+  padding: 24px;
+  box-shadow: none !important;
+  transform: none !important;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page .landing-plans .service-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #d9c6b8 !important;
+}
+
+.landing-page .landing-plans .service-card.featured {
+  border: 2px solid var(--ew-accent) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.landing-page .service-card .icon {
+  display: none !important;
+}
+
+.landing-page .plan-name {
+  font-family: var(--ew-display) !important;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ew-ink) !important;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0 6px;
+}
+
+.landing-page .price-before {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ew-muted) !important;
+  margin-top: 2px;
+}
+
+.landing-page .price-tag {
+  font-family: var(--ew-display) !important;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--ew-accent) !important;
+  margin-top: 2px;
+}
+
+.landing-page .price-tag small {
+  font-family: var(--ew-font) !important;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ew-muted) !important;
+}
+
+.landing-page .price-tag + .card-list {
+  margin-top: 20px;
+}
+
+.landing-page .service-card .card-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ew-secondary) !important;
+  margin: 20px 0 28px;
+}
+
+.landing-page .service-card .card-list li {
+  color: var(--ew-secondary) !important;
+  padding: 4px 0;
+}
+
+.landing-page .landing-plans .service-card .button {
+  margin-top: auto;
+  width: 100%;
+}
+
+.landing-page .landing-plans .button-primary {
+  background: var(--ew-accent) !important;
+  border-color: var(--ew-accent) !important;
+  color: #fff !important;
+}
+
+.landing-page .landing-plans .button-primary:hover {
+  background: var(--ew-accent-hover) !important;
+  border-color: var(--ew-accent-hover) !important;
+  color: #fff !important;
+}
+
+/* =========================================================================
+   CÓMO FUNCIONA — pasos desnudos, número en círculo terracota
+   ========================================================================= */
+
+.landing-page .how-it-works {
+  gap: 40px;
+}
+
+.landing-page .how-step {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.landing-page .how-step:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.landing-page .how-num {
+  width: 48px;
+  height: 48px;
+  background: var(--ew-accent) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 50% !important;
+  margin-bottom: 16px;
+}
+
+.landing-page .how-step h5 {
+  font-family: var(--ew-display) !important;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ew-ink) !important;
+  margin-bottom: 8px;
+}
+
+.landing-page .how-step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ew-secondary) !important;
+}
+
+/* =========================================================================
+   CTA FINAL — banda café cálido, titular serif blanco, píldora terracota
+   ========================================================================= */
+
+.landing-page .landing-cta .cta-banner {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none !important;
+  padding: 80px 20px;
+}
+
+.landing-page .cta-banner h4 {
+  font-family: var(--ew-display) !important;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: #fff !important;
+}
+
+.landing-page .cta-banner p {
+  color: var(--ew-on-dark-muted) !important;
+}
+
+.landing-page .cta-banner .button {
+  background: var(--ew-accent) !important;
+  border-color: var(--ew-accent) !important;
+  color: #fff !important;
+}
+
+.landing-page .cta-banner .button:hover {
+  background: var(--ew-accent-hover) !important;
+  border-color: var(--ew-accent-hover) !important;
+  color: #fff !important;
+}
+
+/* =========================================================================
+   FOOTER — parchment cálido, texto legal tenue
+   ========================================================================= */
+
+.landing-page .footer-standard {
+  background: var(--ew-parchment) !important;
+  padding: 56px 0;
+}
+
+.landing-page .footer-standard .brand-name {
+  color: var(--ew-ink) !important;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.landing-page .footer-standard p,
+.landing-page .footer-standard .rights,
+.landing-page .footer-standard .rights-item,
+.landing-page .footer-standard .rights-sep {
+  color: var(--ew-muted) !important;
+}
+
+.landing-page .footer-standard p {
+  font-size: 13px;
+}
+
+.landing-page .footer-standard a.link-default {
+  color: var(--ew-muted) !important;
+}
+
+.landing-page .footer-standard a.link-default:hover {
+  color: var(--ew-accent) !important;
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+}
+
+.footer-contact-link {
+  font-family: var(--ew-font) !important;
+  font-size: 13px;
+  color: var(--ew-muted) !important;
+  text-decoration: none !important;
+  transition: color .2s ease;
+}
+
+.footer-contact-link:hover {
+  color: var(--ew-accent) !important;
+}
+
+/* =========================================================================
+   FLOTANTES — WhatsApp verde reconocible, scroll-top terracota
+   ========================================================================= */
+
+.landing-page .wa-float {
+  background: #25d366 !important;
+  box-shadow: 0 4px 16px rgba(37,211,102,.35);
+}
+
+.landing-page .wa-float,
+.landing-page a.wa-float[href],
+.landing-page .wa-float svg,
+.landing-page .wa-float path {
+  color: #fff !important;
+}
+
+.landing-page .wa-float:hover {
+  background: #1fbd57 !important;
+  color: #fff !important;
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(37,211,102,.45);
+}
+
+.landing-page .ui-to-top {
+  background: var(--ew-accent) !important;
+  color: #fff !important;
+  border: 0;
+  border-radius: 50%;
+}
+
+/* Modal de fotos — lienzo blanco, tinta */
+.landing-page .photo-modal-info {
+  background: var(--ew-white);
+}
+
+.landing-page .photo-modal-title {
+  color: var(--ew-ink) !important;
+}
+
+.landing-page .photo-modal-desc {
+  color: var(--ew-secondary) !important;
+}
+
+/* Paneles de planes apilados en columna */
+.landing-page .sub-panel {
+  flex-direction: column;
+  margin-top: 28px;
+}
+
+/* =========================================================================
+   FAQ — acordeón nativo, hairline cálido
+   ========================================================================= */
+
+.landing-page .faq-list {
+  max-width: 720px;
+  margin: 40px auto 0;
+}
+
+.landing-page .faq-item {
+  background: var(--ew-white);
+  border: 1px solid var(--ew-hairline);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.landing-page .faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  font-family: var(--ew-font) !important;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ew-ink);
+  transition: color .2s ease;
+}
+
+.landing-page .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.landing-page .faq-item summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ew-hairline);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ew-accent);
+  transition: transform .2s ease;
+}
+
+.landing-page .faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.landing-page .faq-item[open] summary {
+  border-bottom: 1px solid var(--ew-hairline);
+}
+
+.landing-page .faq-item p {
+  padding: 0 22px 18px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ew-body) !important;
+}
+
+/* =========================================================================
+   AJUSTES RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 767.98px) {
+  .landing-page .landing-gallery-img { height: 140px; }
+  .landing-page .landing-testimonials .testimonial-card { padding: 0; }
+  .landing-page .landing-cta .cta-banner { padding: 64px 16px; }
+  .landing-page .service-card { padding: 22px 20px; }
+  .landing-page .landing-trust span { font-size: 13px; }
+  .landing-page .sub-tab { flex: 1 1 0; font-size: 13px; padding: 10px 8px; }
+
+  /* Tabs scroll horizontal en móvil */
+  .landing-page .sub-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 16px;
+  }
+  .landing-page .sub-tabs::-webkit-scrollbar { display: none; }
+  .landing-page .sub-tab { flex: 0 0 auto; white-space: nowrap; }
+
+  /* Galería: videos en fila completa */
+  .landing-page .yt-embed { min-height: 200px; }
+
+  /* Footer: contactos apilados en columna */
+  .footer-contacts { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 575.98px) {
+  .landing-page .landing-top .button { padding: 8px 14px; font-size: 13px; }
+  .landing-page .landing-top-inner { padding: 10px 0; }
+  .landing-page .landing-trust { justify-content: center; }
+}
+
+/* =========================================================================
+   BOTTOM NAVIGATION BAR — solo visible en móvil
+   ========================================================================= */
+
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    height: 60px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(252,246,242,.88);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-top: 1px solid var(--ew-border);
+    box-shadow: 0 -2px 20px rgba(44,42,40,.08);
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 0;
+    text-decoration: none !important;
+    color: var(--ew-muted) !important;
+    transition: color .2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-item.active {
+    color: var(--ew-accent) !important;
+  }
+
+  .bottom-nav-item:active {
+    transform: scale(.92);
+  }
+
+  .bottom-nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .bottom-nav-label {
+    font-family: var(--ew-font) !important;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    line-height: 1;
+  }
+
+  .bottom-nav-wa .bottom-nav-icon {
+    color: #25d366;
+  }
+
+  .bottom-nav-wa.active {
+    color: #25d366 !important;
+  }
+
+  /* Ocultar wa-float en móvil (ya está en la bottom nav) */
+  .wa-float {
+    display: none !important;
+  }
+
+  /* Compensar el espacio de la bottom nav en el contenido */
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Ajustar scroll-margin para que las secciones no queden tapadas */
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none !important;
+  }
+}

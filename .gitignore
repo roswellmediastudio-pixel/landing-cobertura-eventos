@@ -1,0 +1,9 @@
+# Repos separados: sitio web, plan marketing y materiales
+01_SITIO_WEB/
+02_PLAN_MARKETING/
+clientes_testimonios/
+
+.opencode/
+node_modules/
+.DS_Store
+Thumbs.db
