@@ -934,3 +934,54 @@
     display: none !important;
   }
 }
+
+/* ======================================
+   Caja de condiciones antes de reservar
+====================================== */
+.conditions-box {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  background: var(--ew-parchment);
+  border: 1px solid var(--ew-border);
+  border-radius: 12px;
+}
+.conditions-box strong {
+  display: block;
+  font-family: var(--ew-display);
+  font-size: 20px;
+  color: var(--ew-ink);
+  margin-bottom: 12px;
+}
+.conditions-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+.conditions-box li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ew-secondary);
+  margin-bottom: 8px;
+}
+.conditions-box li:last-child {
+  margin-bottom: 0;
+}
+.conditions-box li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ew-accent);
+}
+@media (max-width: 575px) {
+  .conditions-box {
+    padding: 22px 20px;
+  }
+}
