@@ -62,8 +62,8 @@
         if (m.type === 'photo') {
           img.src = m.img;
           img.style.display = 'block';
-          video.style.display = 'none';
-        } else {
+          if (video) video.style.display = 'none';
+        } else if (video) {
           img.style.display = 'none';
           video.style.display = 'block';
           var src = m.youtube
